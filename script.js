@@ -28,12 +28,12 @@ let interval = setInterval(function () {
              return response.json();
          })
          .then(function(list) {
-             ul.innerHTML = "";
+             input.innerHTML = "";
  
              for (let i in list) {
-                 let li = returnListItem(list[i]);
-                 if (li) {
-                     ul.append(li);
+                 let input = returnListItem(list[i]);
+                 if (input) {
+                     body.append(div);
                  }
              }
          });

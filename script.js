@@ -22,4 +22,20 @@ fetch("./https://live-chat-countinue-default-rtdb.firebaseio.com/" ,{
         color: inputColor.vaalue,
     })
 })
+let interval = setInterval(function () {
+     fetch("https://ita-ajax-default-rtdb.firebaseio.com/list.json")
+         .then(function(response) {
+             return response.json();
+         })
+         .then(function(list) {
+             ul.innerHTML = "";
+ 
+             for (let i in list) {
+                 let li = returnListItem(list[i]);
+                 if (li) {
+                     ul.append(li);
+                 }
+             }
+         });
+ }, 2000);
 });
